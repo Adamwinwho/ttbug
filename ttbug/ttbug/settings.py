@@ -26,7 +26,7 @@ SECRET_KEY = ')ih&&=*3-z7=70)36pcd$v_!8e)w$7a@8p+#6-6j7uusmp0lxc'
 DEBUG = True
 
 ALLOWED_HOSTS = ['192.168.245.136']
-
+LANGUAGE_CODE = "zh-hans"
 
 # Application definition
 

@@ -9,3 +9,10 @@ class Blocks(models.Model):
 
     create_time_stamp = models.DateTimeField(auto_now_add=True)
     last_update_timestamp = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "板块"
+        verbose_name_plural = "板块"

@@ -1,7 +1,8 @@
 from django.shortcuts import render
-
+from .models import Blocks
 # Create your views here.
 from django.http import HttpResponse
 
 def index(request):
-    return render(request,"index.html")
+    blocks = Blocks.objects.all().order_by("id")
+    return render(request,"index.html",{"blocks":blocks})
