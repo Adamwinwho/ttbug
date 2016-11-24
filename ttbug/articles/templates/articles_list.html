@@ -1,1 +1,9 @@
 {% extends "base.html" %}
+{% block content %}
+  {% for a in articles %}
+  <div class="well">
+    <h3><a href="#">{{a.title}}</a></h3>
+    <p>{{a.content}}</p>
+  </div>
+  {% endfor %}
+{% endblock %}

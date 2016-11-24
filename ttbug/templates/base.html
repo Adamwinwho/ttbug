@@ -21,14 +21,14 @@
 		<span class="icon-bar"></span>
 		<span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="#">TTBug</a>
+	      <a class="navbar-brand" href="/">TTBug</a>
 	    </div>
 
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
 			    {% for b in blocks %}
-				  <li><a href="#">{{b.name}}</a></li>
+                <li><a href="/articles/list/{{b.id}}">{{b.name}}</a></li>
 				{% endfor %}
 	      </ul>
 	      <form class="navbar-form navbar-left" role="search">
@@ -42,11 +42,11 @@
 	  </div><!-- /.container-fluid -->
 	</nav>
 	<div class="row">
-	  <div class="col-sm-8">
+	  <div class="col-sm-9">
        {% block content %}
        {% endblock %}
 	</div>
-	<div class="col-sm-4">
+	<div class="col-sm-3">
 	   <div id="divborder" align="center">
 	   <img src="/static/img/avator/haha.jpg" width=120px height=108px/>
 	   <br/><br/><br/>
