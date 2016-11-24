@@ -1,9 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
   {% for a in articles %}
-  <div class="well">
-    <h3><a href="#">{{a.title}}</a></h3>
-    <p>{{a.content}}</p>
-  </div>
+	<div class="post-wrapper">
+	  <div class="post">
+	  	<div class="post-heading">
+	  	  <h3 class="title">
+	  	  	<a href="#">{{a.title}}</a>
+	  	  </h3>
+	  	  <div class="date">{{a.create_time_stamp|date:"Y /m / d"}}</div>
+	  	</div>
+	  	<div class="post-content read-more-block">
+	  	  {{a.content}}
+	  	</div>
+	  	<div class="post-footer">
+	  	  <a href="#" class="read-more">
+	  	  	Read More
+	  	  </a>
+	  	</div>
+	  </div>
+	</div>
   {% endfor %}
 {% endblock %}
