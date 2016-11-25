@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+  <div>
+    <form role="form" action="/articles/create/{{block_id}}" method="POST">{% csrf_token %}
+      <h4>文章标题</h4>
+      <input class="form-control" type="text" name="title"/>  
+      <h4>文章内容</h4>
+      <textarea rows="20" class="form-control" type="text" name="content"></textarea>
+      <br/>
+      <button class="btn btn-primary" type="submit">发表</button>
+    </form>
+  </div>
+{% endblock %}
