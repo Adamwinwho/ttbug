@@ -1,4 +1,11 @@
 
+body {
+    background-color: #fbf9f4;
+    color: #004057;
+    /*background: url('./../images/wood.jpg') fixed;*/
+}
+
+
 /*
   Post
 */
@@ -32,12 +39,12 @@
     padding: 8px 15px;
     position: relative;
     color: #ff5e73;
-    height: 66px;
+    height: 50px;
 }
 
 .post-content {
     padding: 40px 15px 40px 15px;
-    height: 100px;
+    height: 90px;
     overflow: hidden;
     position: relative;
     background-color: #fff;
