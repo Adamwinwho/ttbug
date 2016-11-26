@@ -24,8 +24,12 @@ def article_create(request,block_id):
     if request.method == "GET":
         return render(request,"article_create.html",{"blocks":blocks,"block_id":block_id})
     else:
-        title = request.POST["title"]
-        content = request.POST["content"]
+        title = request.POST["title"].strip()
+        content = request.POST["content"].strip()
+        if not title or not content:
+            return render(request,"article_create.html",{"blocks":blocks,"block_id":block_id,"error":"标题或内容不能为空","title":title,"content":content})
+        if len(title)>100 or len(content)>10000:
+            return render(request,"article_create.html",{"blocks":blocks,"block_id":block_id,"error":"标题或内容长度超过限制","title":title,"content":content})
         block = Blocks.objects.get(id=block_id)
         article = Articles(block=block,title=title,content=content)
         article.save()

@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load custom_markdown %}
 {% block content %}
   {% for a in articles %}
 	<div class="post-wrapper">
@@ -10,7 +11,7 @@
 	  	  <div class="date">{{a.create_time_stamp|date:"Y /m / d"}}</div>
 	  	</div>
 	  	<div class="post-content read-more-block">
-	  	  {{a.content}}
+	  	  {{a.content | custom_markdown}}
 	  	</div>
 	  	<div class="post-footer">
             <a href="/articles/detail/{{a.id}}" class="read-more">

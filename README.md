@@ -1,2 +1,2 @@
 # ttbug
-用flask创建个人网站
+使用django和python3搭建个人网站

@@ -1,13 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
+{% if error %}
+  <div class="alert alert-warning" role="alert">
+    {{error}}
+  </div>
+{% endif %}
   <div>
     <form role="form" action="/articles/create/{{block_id}}" method="POST">{% csrf_token %}
       <h4>文章标题</h4>
-      <input class="form-control" type="text" name="title"/>  
+      <input class="form-control" type="text" name="title" value="{{title}}" placeholder="文章标题长度不要超过100个字"/>  
       <h4>文章内容</h4>
-      <textarea rows="20" class="form-control" type="text" name="content"></textarea>
+      <textarea placeholder="文章内容长度不要超过10000个字" rows="20" class="form-control" type="text" name="content">{{content}}</textarea>
       <br/>
       <button class="btn btn-primary" type="submit">发表</button>
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  <a href="http://wowubuntu.com/markdown/index.html" target="_blank">支持markdown语法编辑噢,想了解更多markdown语法，请点击这里哦...</a>
     </form>
   </div>
 {% endblock %}
