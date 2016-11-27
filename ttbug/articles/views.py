@@ -1,15 +1,18 @@
 from django.shortcuts import render,redirect
 from blocks.views import Blocks
 from .models import Articles
+from utils.paginator import paginate_queryset
 
 # Create your views here.
 
 def articles_list(request,block_id):
+    page_no = int(request.GET.get("page_no","1"))
     block_id = int(block_id)
     blocks = Blocks.objects.all()
     block = Blocks.objects.get(id=block_id)
     articles = Articles.objects.filter(block=block).order_by("-id")
-    return render(request,"articles_list.html",{"block_id":block_id,"blocks":blocks,"articles":articles})
+    articles_objs,pagination_data = paginate_queryset(articles,page_no)
+    return render(request,"articles_list.html",{"block_id":block_id,"blocks":blocks,"articles":articles_objs,"pagination_data":pagination_data})
 
 def article_detail(request,article_id):
     article_id = int(article_id)
