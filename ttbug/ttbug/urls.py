@@ -17,9 +17,13 @@ import django
 from django.conf.urls import url,include
 from django.contrib import admin
 from blocks.views import index
+from usercenter.views import register,activate
+
 urlpatterns = [
     url(r'^$',index),
     url(r'^admin/', admin.site.urls),
     url(r'^blocks/',include("blocks.urls")),
     url(r'^articles/',include("articles.urls")),
+    url(r'^register$',register),
+    url(r'^activate/(?P<code>\w+)',activate)
 ]

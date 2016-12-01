@@ -1,8 +1,10 @@
 from django.db import models
+from django.contrib.auth.models import User
 from blocks.models import Blocks
 
 # Create your models here.
 class Articles(models.Model):
+    owner = models.ForeignKey(User,verbose_name="作者")
     title = models.CharField("文章标题",max_length=100)
     author = models.CharField("文章作者",max_length=100)
     content = models.TextField("文章内容",max_length=10000)

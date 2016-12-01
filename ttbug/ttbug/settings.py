@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+from .secret import *
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,7 +26,7 @@ SECRET_KEY = ')ih&&=*3-z7=70)36pcd$v_!8e)w$7a@8p+#6-6j7uusmp0lxc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.245.136']
+ALLOWED_HOSTS = ['192.168.245.137']
 LANGUAGE_CODE = "zh-hans"
 
 # Application definition
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'pagedown',
     'blocks',
     'articles',
+    'usercenter',
 ]
 
 MIDDLEWARE = [
