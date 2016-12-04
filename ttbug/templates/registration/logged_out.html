@@ -33,9 +33,11 @@
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
-			    {% for b in blocks %}
-                <li><a href="/articles/list/{{b.id}}">{{b.name}}</a></li>
-				{% endfor %}
+            <li><a href="/articles/list/1">Linux</a></li>
+            <li><a href="/articles/list/2">C</a></li>
+            <li><a href="/articles/list/3">Python</a></li>
+            <li><a href="/articles/list/4">Golang</a></li>
+            <li><a href="/articles/list/5">江湖恩仇录</a></li>
 	      </ul>
 	      <form class="navbar-form navbar-left" role="search">
 		<div class="form-group">
@@ -59,8 +61,10 @@
 	</nav>
 	<div class="row">
 	  <div class="col-sm-9">
-       {% block content %}
-       {% endblock %}
+      <div>
+	    <h4>您好，您已退出登陆</h4>
+	    <a href="/accounts/login">请点击此处重新登陆</a>
+      </div>
 	</div>
 	<div class="col-sm-3">
 	   <div id="divborder" align="center">

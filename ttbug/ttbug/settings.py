@@ -26,7 +26,7 @@ SECRET_KEY = ')ih&&=*3-z7=70)36pcd$v_!8e)w$7a@8p+#6-6j7uusmp0lxc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.245.137']
+ALLOWED_HOSTS = ['192.168.245.140']
 LANGUAGE_CODE = "zh-hans"
 
 # Application definition
@@ -124,3 +124,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR,"static"),)
+LOGIN_REDIRECT_URL = '/'

@@ -33,9 +33,11 @@
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
-			    {% for b in blocks %}
-                <li><a href="/articles/list/{{b.id}}">{{b.name}}</a></li>
-				{% endfor %}
+            <li><a href="/articles/list/1">Linux</a></li>
+            <li><a href="/articles/list/2">C</a></li>
+            <li><a href="/articles/list/3">Python</a></li>
+            <li><a href="/articles/list/4">Golang</a></li>
+            <li><a href="/articles/list/5">江湖恩仇录</a></li>
 	      </ul>
 	      <form class="navbar-form navbar-left" role="search">
 		<div class="form-group">
@@ -59,9 +61,54 @@
 	</nav>
 	<div class="row">
 	  <div class="col-sm-9">
-       {% block content %}
-       {% endblock %}
-	</div>
+      {% if form.non_field_errors %}
+        {% for error in form.non_field_errors%}
+          <div class="alert alert-danger">{{error}}</div>
+        {% endfor %}
+      {% endif %}
+      {% if form.username.errors %}
+        {% for error in form.username.errors%}
+          <div class="alert alert-danger">用户名:{{error}}</div>
+        {% endfor %}
+      {% endif %}
+      {% if form.password.errors %}
+        {% for error in form.password.errors%}
+          <div class="alert alert-danger">密码:{{error}}</div>
+        {% endfor %}
+      {% endif %}
+	  </div>
+	  <div class="col-sm-3">
+	  </div>
+	  </div>
+	  <div class="row">
+      <div class="col-sm-2">
+      </div>
+      <div class="col-sm-5">
+          <br/><br/><br/><br/><br/>
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">登陆</h3>
+            </div>
+            <div class="panel-body">
+              <form method="POST">{% csrf_token %}
+          <div class="input-group">
+		      <span class="input-group-addon">用户名</span>
+		      <input type="text" class="form-control" name="username"/>
+              </div><br/>
+          <div class="input-group">
+		      <span class="input-group-addon">密 码</span>
+		      <input type="password" class="form-control" name="password"/>
+              </div><br/>
+              <button type="submit" class="btn btn-primary">登陆</button>
+              </form>
+            </div>
+            <div class="panel-footer">
+              <a href="/register">还没有账号?赶紧去注册吧...</a>
+            </div>
+          </div>
+      </div>
+      <div class="col-sm-2">
+      </div>
 	<div class="col-sm-3">
 	   <div id="divborder" align="center">
 	   <img src="/static/img/avator/haha.jpg" width=120px height=108px/>
